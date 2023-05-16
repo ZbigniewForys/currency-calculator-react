@@ -1,8 +1,8 @@
 import "./style.css";
-import Tbody from "./Tr";
+import Tbody from "./Row";
 
 const Table = ({ currencyTable }) => {
-    const trTable = (currencyTable) =>
+    const row = (currencyTable) =>
         currencyTable.map((currencyItems) =>
         (<Tbody key={currencyItems.currency}
                 currencyTable={currencyItems}>
@@ -19,7 +19,7 @@ const Table = ({ currencyTable }) => {
                     </tr>
                 </thead>
                 <tbody>
-                {trTable(currencyTable)}
+                {row(currencyTable)}
                 </tbody>
             </table>
         </div>

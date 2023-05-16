@@ -10,7 +10,6 @@ const Form = (props) => {
       onSubmit={onFormSubmit}
     > <div className="form__container">
         <label className="form__label">Data:</label>
-
         <input
           className="form__calculationDate"
           defaultValue={props.calculationDate}
@@ -21,7 +20,10 @@ const Form = (props) => {
           onChange={({ target }) => props.changeDate(target.value)}>
         </input>
         <label className="form__label">Kwota w PLN:</label>
-        <input className="form__input" required type="number" step="0.01"
+        <input className="form__input"
+          required
+          type="number"
+          step="0.01"
           defaultValue={props.valuePLN}
           onChange={({ target }) => props.changeValuePLN(target.value)}>
         </input>

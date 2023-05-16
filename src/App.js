@@ -3,7 +3,8 @@ import Main from "./Main";
 import Header from "./Header";
 import Form from "./Form";
 import Table from "./Table";
-import Fotter from "./Fotter";
+import Footer from "./Footer";
+import Clock from "./Clock";
 
 function App() {
   const [currencyTable, setCurrencyTable] = useState([
@@ -24,27 +25,23 @@ function App() {
       ...line,
       rate: convertRate(line.indicator) * 10000 / 10000,
       value: Math.round(valuePLN * 100 / convertRate(line.indicator) * 10000 / 10000) / 100
-    })));
+    }))
+    );
   };
 
   const [valuePLN, setValuePLN] = useState(100.00);
-
   const changeValuePLN = (value) => {
     setValuePLN(value)
     resetTable();
   };
-
   const today = new Date();
-
   const maxDate = today.toISOString().slice(0, 10)
-
-  const [calculationDate, setCalculationDate] = useState(today.toISOString().slice(0, 10));
-
+  const [calculationDate, setCalculationDate] =
+    useState(today.toISOString().slice(0, 10));
   const changeDate = (value) => {
     setCalculationDate(value);
     resetTable();
   }
-
   const simulateRateOfDay = (indicator) =>
     (indicator * (100 + Math.round(calculationDate.slice(9, 10))) / 100);
 
@@ -53,6 +50,7 @@ function App() {
 
   return (
     <Main>
+      <Clock></Clock>
       <Header></Header>
       <Form
         calculationDate={calculationDate}
@@ -65,9 +63,9 @@ function App() {
       <Table
         currencyTable={currencyTable}>
       </Table>
-      <Fotter></Fotter>
+      <Footer></Footer>
     </Main>
   )
 }
 
-export default App;
+export default App; 

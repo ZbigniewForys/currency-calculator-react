@@ -1,5 +1,5 @@
 import "./style.css";
-const Tr = ({ currencyTable }) =>
+const Row = ({ currencyTable }) =>
 ( 
     <tr>
              <th className="table__cell table__header">{currencyTable.currency}</th>
@@ -14,12 +14,12 @@ const Tr = ({ currencyTable }) =>
         <td className="table__cell"><input 
         className="table__inputCell"
             type="number" step="0.01"
-            value={currencyTable.value}
+            value={currencyTable.value }
             readOnly={true}
-            ></input>
-        </td>
+            accept=""
+        ></input></td>
     </tr>
  );
 
-export default Tr;
+export default Row;
 

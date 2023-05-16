@@ -18,6 +18,9 @@ html {
   border-radius: 5px;
   overflow: auto; 
   margin: 100px auto;
+
+}
+.body{
   background-image:url("background.jpg"); 
   background-repeat: no-repeat  ;
   background-position:inherit;
