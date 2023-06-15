@@ -1,25 +1,24 @@
-import "./style.css";
+import React from 'react';
+import { StyledTableRow, StyledTableCell, StyledTableInputCell }
+    from ".././styled";
 const Row = ({ currencyTable }) =>
-( 
-    <tr>
-             <th className="table__cell table__header">{currencyTable.currency}</th>
-        <td className="table__cell">
-            <input
-            className="table__inputCell"
+(
+    <StyledTableRow>
+        <StyledTableCell primary> {currencyTable.currency} </StyledTableCell>
+        <StyledTableCell><StyledTableInputCell
             value={currencyTable.rate}
             type="number" step="0.0001"
             readOnly={true}
-            ></input >
-        </td>
-        <td className="table__cell"><input 
-        className="table__inputCell"
+        ></StyledTableInputCell></StyledTableCell>
+        <StyledTableCell><StyledTableInputCell
+            className="table__inputCell"
             type="number" step="0.01"
-            value={currencyTable.value }
+            value={currencyTable.value}
             readOnly={true}
             accept=""
-        ></input></td>
-    </tr>
- );
+        ></StyledTableInputCell>
+        </StyledTableCell>
+    </StyledTableRow >
+);
 
 export default Row;
-

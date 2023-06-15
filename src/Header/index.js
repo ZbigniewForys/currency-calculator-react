@@ -1,8 +1,8 @@
 import React from 'react';
-import "./style.css";
+import {StyledHeader} from "./styled";
 const Header = () => {
     return (
-        <header className="header">KALKULATOR WALUT</header>
+        <StyledHeader>KALKULATOR WALUT</StyledHeader>
     );
 }
 export default Header;

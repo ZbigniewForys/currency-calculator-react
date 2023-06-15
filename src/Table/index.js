@@ -1,29 +1,35 @@
-import "./style.css";
-import Tbody from "./Row";
+
+import {
+    StyledTable,
+    StyledTableRow,
+    StyledTableCell,
+    StyledTableContainer
+} from "./styled"
+import TableBody from "./Row";
+
 
 const Table = ({ currencyTable }) => {
     const row = (currencyTable) =>
         currencyTable.map((currencyItems) =>
-        (<Tbody key={currencyItems.currency}
-                currencyTable={currencyItems}>
-        </Tbody>));
+        (<TableBody key={currencyItems.currency}
+            currencyTable={currencyItems}>
+        </TableBody>));
 
     return (
-        <div className="table__container">
-            <table className="table">
+        <StyledTableContainer>
+            <StyledTable>
                 <thead>
-                    <tr>
-                        <th className="table__cell table__header">Waluta</th>
-                        <th className="table__cell table__header">Kurs dnia</th>
-                        <th className="table__cell table__header">Wartość</th>
-                    </tr>
+                    <StyledTableRow primary>
+                        <StyledTableCell primary>Waluta</StyledTableCell>                    
+                        <StyledTableCell primary>Kurs dnia</StyledTableCell>                     
+                        <StyledTableCell primary>Wartość</StyledTableCell>                     
+                    </StyledTableRow>
                 </thead>
-                <tbody>
-                {row(currencyTable)}
-                </tbody>
-            </table>
-        </div>
-
+                <tbodyBody>
+                    {row(currencyTable)}
+                </tbodyBody>
+            </StyledTable>
+        </StyledTableContainer>
     );
 }
 export default Table;

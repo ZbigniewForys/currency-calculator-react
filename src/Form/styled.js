@@ -1,51 +1,45 @@
-.form {
+import styled  from "styled-components";
+
+export const StyledForm= styled.form `
     padding: 15px;
     background-color: rgb(219 241 188);
     width: 100%;
-    ;
-    width: 100%;
-}
+`;
 
-.form__button {
+export const StyledFormButton=styled.button `
     margin-left: 15px;
     height: 30px;
-    width: 110px;
+    width: 100px;
     border-radius: 5px;
     box-shadow: 3px 2px rgb(128, 128, 128);
-    background-color: rgb(242, 250, 252);
+    background-color: white;
     font-weight: bold;
-
-}
-
-.form__button:hover {
-    background-color: rgb(160, 241, 66, 0.01);
-}
-
-.form__button:focus {
-    background-color: rgb(240, 250, 131);
-}
-
-.form__container {
+  &:hover { 
+    background-color: yellow;
+  }
+  &:focus {    
+    background-color: rgb(228,228,228);
+  }
+`;
+export const StyledFormContainer = styled.div `
     display: inline-block;
     margin-left: 10px;
-}
-
-.form__label {
+`;
+export const StyledFormLabel=styled.label ` 
     padding-right: 5px;
     margin-left: 10px;
     text-align: left;
     width: 100px;
-}
-
-.form__input {
+`;
+export const StyledFormInput=styled.input `
     width: 100px;
     text-align: right;
-}
+    `;
 
-.form__calculationDate {
+export const StyledFormCalculationDate=styled.input `
     margin-left: 5px;
     width: 120px;
     height: 30px;
     border-radius: 5px;
     border-color: lightgray;
-}
+`;

@@ -21,7 +21,6 @@ html {
 
 }
 .body{
-  background-image:url("background.jpg"); 
-  background-repeat: no-repeat  ;
-  background-position:inherit;
+   background-image:url("background.jpg");  
+
 }

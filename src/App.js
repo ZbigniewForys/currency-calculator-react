@@ -23,8 +23,8 @@ function App() {
     setCurrencyTable(currencyTable => currencyTable.map(line =>
     ({
       ...line,
-      rate: convertRate(line.indicator) * 10000 / 10000,
-      value: Math.round(valuePLN * 100 / convertRate(line.indicator) * 10000 / 10000) / 100
+       rate: convertRate(line.indicator).toFixed(4),
+      value: (Math.round(valuePLN *100 )/convertRate(line.indicator)/100).toFixed(2), 
     }))
     );
   };
@@ -46,8 +46,8 @@ function App() {
     (indicator * (100 + Math.round(calculationDate.slice(9, 10))) / 100);
 
   const convertRate = (indicator) =>
-    Math.ceil(simulateRateOfDay(indicator) * 10000) / 10000;
-
+    Math.ceil(simulateRateOfDay(indicator) * 10000) / 10000; 
+  
   return (
     <Main>
       <Clock></Clock>
