@@ -7,8 +7,9 @@
 - USD
 - CHF
 - GBP
+- RUB
 
- based on the exchange rates published on the website NBP : "https://www.nbp.pl/home.aspx?f=/statystyka/kursy.html"
+
 
 ## Procedure
 When starting the calculator, the current date and the default amount of PLN 100 are set. 

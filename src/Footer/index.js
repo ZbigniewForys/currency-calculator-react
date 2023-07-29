@@ -1,9 +1,17 @@
-import {StyledFooter , Paragraph } from "./styled"
-const Footer = () => (
-  <StyledFooter>
-    <Paragraph>Uwaga: Niniejszy kalkulator ma charakter poglądowy. Kursy walut nie są pobierane z
-      wiarygonego źródła. W żadnym wypadku nie podejmuj na podstawie tej tabeli żadnych decyzji finansowych.
-    </Paragraph>
-  </StyledFooter>
-);
+import { StyledFooter, Paragraph } from "./styled";
+
+const Footer = ({ state }) => {
+  return (
+    <StyledFooter>
+      <Paragraph state={state}>
+        {state === "loading"
+          ? "Trwa pobieranie kursów walut z platformy https://api.exchangerate.host/ "
+          : state === "error"
+          ? "Pobieranie nie powidło się. Sprawdź połączenie."
+          : "Kursy walut pobrane z platformy https://api.exchangerate.host/"}
+        ;
+      </Paragraph>
+    </StyledFooter>
+  );
+};
 export default Footer;
