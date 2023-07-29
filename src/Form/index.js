@@ -1,45 +1,47 @@
-
-import React from 'react';
 import {
   StyledForm,
-  StyledFormButton,
-  StyledFormContainer,
-  StyledFormLabel,
-  StyledFormInput,
-  StyledFormCalculationDate
+  Button,
+  Container,
+  Label,
+  Input,
+  CalculationDate,
 } from "./styled";
 
-const Form = (props) => {
+const Form = ({
+  calculationDate,
+  maxDate,
+  changeDate,
+  valuePLN,
+  changeValuePLN,
+  convertTable,
+  currencyTable,
+}) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
-  }
+  };
   return (
     <StyledForm onSubmit={onFormSubmit}>
-      <StyledFormContainer>
-        <StyledFormLabel>Data:</StyledFormLabel>
-        <StyledFormCalculationDate
-          defaultValue={props.calculationDate}
+      <Container>
+        <Label>Data:</Label>
+        <CalculationDate
+          defaultValue={calculationDate}
           name="calculation_Date"
           type="date"
           required
-          max={props.maxDate}
-          onChange={({ target }) => props.changeDate(target.value)}>
-        </StyledFormCalculationDate>
-        <StyledFormLabel>Kwota w PLN:</StyledFormLabel>
-        <StyledFormInput
+          max={maxDate}
+          onChange={({ target }) => changeDate(target.value)}
+        ></CalculationDate>
+        <Label>Kwota w PLN:</Label>
+        <Input
           required
           type="number"
           step="0.01"
-          defaultValue={props.valuePLN}
-          onChange={({ target }) => props.changeValuePLN(target.value)}>
-        </StyledFormInput>
-        <StyledFormButton
-          onClick={({ target }) => props.convertTable()}
-        >Przelicz
-        </StyledFormButton>
-      </StyledFormContainer>
+          defaultValue={valuePLN}
+          onChange={({ target }) => changeValuePLN(target.value)}
+        ></Input>
+        <Button onClick={() => convertTable(currencyTable)}>Przelicz</Button>
+      </Container>
     </StyledForm>
-  )
-}
-
+  );
+};
 export default Form;

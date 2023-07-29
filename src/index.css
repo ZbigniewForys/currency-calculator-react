@@ -1,13 +1,11 @@
 html {
   box-sizing: border-box;
 }
-
 *,
 ::after,
 ::before {
   box-sizing: inherit;
 }
-
 #root {
   max-width: 600px;
   min-width: 368px;
@@ -22,5 +20,4 @@ html {
 }
 .body{
    background-image:url("background.jpg");  
-
 }
